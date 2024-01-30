@@ -23,8 +23,6 @@ def init(request):
 @pytest.fixture(scope="function")
 def driver(request):
     options = Options()
-    # options.add_argument('--ignore-certificate-errors')
-    # options.add_argument('--allow-running-insecure-content')
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
     with webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()), options=options
