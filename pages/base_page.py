@@ -7,6 +7,7 @@ from modules.context import ctx
 SHORT_TIMEOUT = 3
 LONG_TIMEOUT = 30
 
+
 class BasePage:
 
     def __init__(self, driver):
@@ -26,8 +27,7 @@ class BasePage:
     @property
     def locators(self):
         return {
-            key: (loc["by"], loc["locator"])
-            for key, loc in locators.get(self.name, {}).items()
+            key: (loc["by"], loc["locator"]) for key, loc in locators.get(self.name, {}).items()
         }
 
     @property

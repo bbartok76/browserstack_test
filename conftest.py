@@ -8,7 +8,7 @@ from modules.context import ctx
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--base-page",
+        "--base-url",
         action="store",
         default="https://www.browserstack.com",
         help="The root url of the tested site",
@@ -17,7 +17,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="session", autouse=True)
 def init(request):
-    ctx["base_url"] = request.config.getoption("--base-page")
+    ctx["base_url"] = request.config.getoption("--base-url")
 
 
 @pytest.fixture(scope="function")
