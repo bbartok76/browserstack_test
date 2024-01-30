@@ -20,6 +20,10 @@ class BasePage:
         return self._name
 
     @property
+    def current_url(self):
+        return self.driver.current_url
+
+    @property
     def locators(self):
         return {
             key: (loc["by"], loc["locator"])

@@ -11,3 +11,4 @@ def test_login_with_invalid_email(driver, email, password):
     page.login(email, password)
     page.sign_in.is_displayed()
     assert page.invalid_email.is_displayed()
+    assert page.url == page.current_url
