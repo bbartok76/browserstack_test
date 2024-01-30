@@ -1,0 +1,20 @@
+login_page:
+  email:
+    locator: user_email_login
+    by: id
+  password:
+    locator: user_password
+    by: id
+  sign_in:
+    locator: user_submit
+    by: id
+  accept_cookies:
+    locator: accept-cookie-notification
+    by: id
+  invalid_email:
+  # lazy expectation interpretation by meaning
+    # locator: //span[text()="Invalid Email"]
+    # by: xpath
+  # strict expectation interpretation by word: Check that “Invalid Email” message appears in email field
+    locator: //input[@id='user_email_login']/following-sibling::div[1]//span[text()="Invalid Email"]
+    by: xpath
