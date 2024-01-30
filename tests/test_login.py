@@ -1,4 +1,3 @@
-from time import sleep
 from pages.login_page import LoginPage
 from modules.params import invalid_email_params
 
