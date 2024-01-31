@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.remote.webelement import WebElement
 from pages.base_page import BasePage, SHORT_TIMEOUT
 
 
@@ -11,25 +12,25 @@ class LoginPage(BasePage):
         self._url = "/users/sign_in"
 
     @property
-    def email(self):
+    def email(self) -> WebElement:
         return WebDriverWait(self.driver, SHORT_TIMEOUT).until(
             EC.presence_of_element_located(self.locators["email"])
         )
 
     @property
-    def password(self):
+    def password(self) -> WebElement:
         return WebDriverWait(self.driver, SHORT_TIMEOUT).until(
             EC.presence_of_element_located(self.locators["password"])
         )
 
     @property
-    def sign_in(self):
+    def sign_in(self) -> WebElement:
         return WebDriverWait(self.driver, SHORT_TIMEOUT).until(
             EC.presence_of_element_located(self.locators["sign_in"])
         )
 
     @property
-    def invalid_email(self):
+    def invalid_email_message(self) -> WebElement:
         return WebDriverWait(self.driver, SHORT_TIMEOUT).until(
             EC.presence_of_element_located(self.locators["invalid_email"])
         )
